@@ -95,7 +95,6 @@ Low-level tracker. Update on every work session. Status: `todo` | `doing` | `don
 | Q-02 | Who labels relevance for queries (user approves Claude drafts)? | T-03 |
 | Q-03 | Include transcription work (`pages.py`, `handwritten_answer_v2.md`) later? | none |
 | Q-04 | Hosting target for demo (VPS / free tier)? | T-18 |
-| Q-05 | Rotate repo description/topics wording | T-14 |
 
 ## Measurements (fill only with real runs)
 | Metric | Dense-only | + FTS/RRF | Set | Date |
