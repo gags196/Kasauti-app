@@ -1,0 +1,138 @@
+# UPSC CSE Mains — Mathematics Optional, Papers I & II.
+# Topic tree follows the official syllabus headings; micro-topics give the
+# granularity PYQ tagging and rubric topic_paths need. Founder-editable;
+# re-run scripts/seed_taxonomy.py after edits (idempotent upsert by code/path).
+exam:
+  code: upsc-cse
+  name_en: UPSC Civil Services Examination
+  name_hi: संघ लोक सेवा आयोग सिविल सेवा परीक्षा
+
+papers:
+  - code: mains-maths-1
+    stage: mains
+    optional_subject_code: maths
+    name_en: Mathematics Optional — Paper I
+    name_hi: गणित वैकल्पिक — प्रश्नपत्र I
+    subjects:
+      - code: maths1
+        name_en: Mathematics Paper I
+        name_hi: गणित प्रश्नपत्र I
+        topics:
+          - slug: linear-algebra
+            name_en: Linear Algebra
+            name_hi: रैखिक बीजगणित
+            children:
+              - {slug: vector-spaces, name_en: "Vector spaces over R and C, linear dependence, bases, dimension", name_hi: "R और C पर सदिश समष्टियाँ, रैखिक आश्रितता, आधार, विमा"}
+              - {slug: linear-transformations, name_en: "Linear transformations, rank and nullity, matrix representation", name_hi: "रैखिक रूपांतरण, कोटि एवं शून्यता, आव्यूह निरूपण"}
+              - {slug: matrices-operations, name_en: "Algebra of matrices, row/column reduction, echelon form, rank", name_hi: "आव्यूहों का बीजगणित, पंक्ति/स्तंभ समानयन, सोपानक रूप, कोटि"}
+              - {slug: linear-equations, name_en: "Systems of linear equations", name_hi: "रैखिक समीकरण निकाय"}
+              - {slug: eigenvalues-eigenvectors, name_en: "Eigenvalues, eigenvectors, characteristic polynomial, Cayley–Hamilton theorem", name_hi: "आइगेनमान, आइगेनसदिश, अभिलक्षणिक बहुपद, केली–हैमिल्टन प्रमेय"}
+              - {slug: quadratic-forms, name_en: "Symmetric, skew-symmetric, Hermitian, orthogonal, unitary matrices; canonical forms", name_hi: "सममित, विषम-सममित, हर्मिटी, लांबिक, ऐकिक आव्यूह; विहित रूप"}
+          - slug: calculus
+            name_en: Calculus
+            name_hi: कलन
+            children:
+              - {slug: real-functions-limits, name_en: "Real numbers, functions, limits, continuity, differentiability", name_hi: "वास्तविक संख्याएँ, फलन, सीमा, सांतत्य, अवकलनीयता"}
+              - {slug: mean-value-theorems, name_en: "Mean value theorems, Taylor's theorem, indeterminate forms", name_hi: "माध्यमान प्रमेय, टेलर प्रमेय, अनिर्धार्य रूप"}
+              - {slug: maxima-minima, name_en: "Maxima and minima, asymptotes, curve tracing", name_hi: "उच्चिष्ठ और निम्निष्ठ, अनंतस्पर्शी, वक्र अनुरेखण"}
+              - {slug: several-variables, name_en: "Functions of several variables, partial derivatives, Lagrange's multipliers, Jacobian", name_hi: "बहुचर फलन, आंशिक अवकलज, लाग्रांज गुणक, जैकोबियन"}
+              - {slug: riemann-integral, name_en: "Riemann's definition of definite integrals, indefinite integrals, improper integrals", name_hi: "निश्चित समाकल की रीमान परिभाषा, अनिश्चित समाकल, अनुचित समाकल"}
+              - {slug: multiple-integrals, name_en: "Double and triple integrals, areas, surfaces and volumes", name_hi: "द्विगुण एवं त्रिगुण समाकल, क्षेत्रफल, पृष्ठ और आयतन"}
+          - slug: analytic-geometry
+            name_en: Analytic Geometry
+            name_hi: वैश्लेषिक ज्यामिति
+            children:
+              - {slug: lines-planes, name_en: "Cartesian and polar coordinates in three dimensions, straight lines, planes", name_hi: "त्रिविम में कार्तीय एवं ध्रुवीय निर्देशांक, सरल रेखाएँ, समतल"}
+              - {slug: sphere-cone-cylinder, name_en: "Sphere, cone, cylinder", name_hi: "गोला, शंकु, बेलन"}
+              - {slug: conicoids, name_en: "Paraboloid, ellipsoid, hyperboloid of one and two sheets", name_hi: "परवलयज, दीर्घवृत्तज, एक एवं द्वि-पृष्ठी अतिपरवलयज"}
+          - slug: ordinary-differential-equations
+            name_en: Ordinary Differential Equations
+            name_hi: साधारण अवकल समीकरण
+            children:
+              - {slug: first-order, name_en: "First order ODEs: formulation, integrating factor, Clairaut's equation, singular solutions", name_hi: "प्रथम कोटि साधारण अवकल समीकरण: सूत्रीकरण, समाकलन गुणक, क्लेरो समीकरण, विचित्र हल"}
+              - {slug: higher-order-linear, name_en: "Second and higher order linear equations with constant coefficients, complementary function, particular integral", name_hi: "अचर गुणांक वाले द्वितीय एवं उच्च कोटि रैखिक समीकरण, पूरक फलन, विशेष समाकल"}
+              - {slug: variable-coefficients, name_en: "Second order linear equations with variable coefficients, Euler–Cauchy equation, variation of parameters", name_hi: "चर गुणांक वाले द्वितीय कोटि रैखिक समीकरण, ऑयलर–कोशी समीकरण, प्राचल विचरण"}
+              - {slug: laplace-transforms, name_en: "Laplace and inverse Laplace transforms, application to initial value problems", name_hi: "लाप्लास एवं व्युत्क्रम लाप्लास रूपांतरण, प्रारंभिक मान समस्याओं में अनुप्रयोग"}
+          - slug: dynamics-statics
+            name_en: Dynamics and Statics
+            name_hi: गतिकी एवं स्थैतिकी
+            children:
+              - {slug: rectilinear-motion, name_en: "Rectilinear motion, simple harmonic motion, motion in a plane, projectiles", name_hi: "ऋजुरेखीय गति, सरल आवर्त गति, समतल में गति, प्रक्षेप्य"}
+              - {slug: constrained-motion, name_en: "Constrained motion, work and energy, conservation of energy", name_hi: "प्रतिबंधित गति, कार्य एवं ऊर्जा, ऊर्जा संरक्षण"}
+              - {slug: kepler-orbits, name_en: "Kepler's laws, orbits under central forces", name_hi: "केप्लर के नियम, केंद्रीय बलों के अधीन कक्षाएँ"}
+              - {slug: equilibrium, name_en: "Equilibrium of a system of particles, friction, common catenary, virtual work", name_hi: "कण निकाय का संतुलन, घर्षण, सामान्य कैटिनरी, कल्पित कार्य"}
+          - slug: vector-analysis
+            name_en: Vector Analysis
+            name_hi: सदिश विश्लेषण
+            children:
+              - {slug: vector-fields, name_en: "Scalar and vector fields, differentiation of vector field of a scalar variable", name_hi: "अदिश एवं सदिश क्षेत्र, अदिश चर के सदिश क्षेत्र का अवकलन"}
+              - {slug: gradient-divergence-curl, name_en: "Gradient, divergence and curl; higher order derivatives; vector identities", name_hi: "प्रवणता, अपसरण एवं कर्ल; उच्च कोटि अवकलज; सदिश सर्वसमिकाएँ"}
+              - {slug: integral-theorems, name_en: "Gauss and Stokes' theorems, Green's identities", name_hi: "गाउस एवं स्टोक्स प्रमेय, ग्रीन की सर्वसमिकाएँ"}
+              - {slug: curves-in-space, name_en: "Curves in space, curvature and torsion, Serret–Frenet formulae", name_hi: "आकाश में वक्र, वक्रता एवं ऐंठन, सेरेट–फ्रेनेट सूत्र"}
+
+  - code: mains-maths-2
+    stage: mains
+    optional_subject_code: maths
+    name_en: Mathematics Optional — Paper II
+    name_hi: गणित वैकल्पिक — प्रश्नपत्र II
+    subjects:
+      - code: maths2
+        name_en: Mathematics Paper II
+        name_hi: गणित प्रश्नपत्र II
+        topics:
+          - slug: algebra
+            name_en: Algebra
+            name_hi: आधुनिक बीजगणित
+            children:
+              - {slug: groups, name_en: "Groups, subgroups, cyclic groups, cosets, Lagrange's theorem", name_hi: "समूह, उपसमूह, चक्रीय समूह, सहसमुच्चय, लाग्रांज प्रमेय"}
+              - {slug: normal-subgroups, name_en: "Normal subgroups, quotient groups, homomorphism theorems, permutation groups, Cayley's theorem", name_hi: "प्रसामान्य उपसमूह, विभाग समूह, समाकारिता प्रमेय, क्रमचय समूह, केली प्रमेय"}
+              - {slug: rings-ideals, name_en: "Rings, subrings, ideals, integral domains, fields, quotient fields", name_hi: "वलय, उपवलय, गुणजावली, पूर्णांकीय प्रांत, क्षेत्र, विभाग क्षेत्र"}
+              - {slug: pid-ufd, name_en: "Principal ideal domains, Euclidean domains, unique factorization domains", name_hi: "मुख्य गुणजावली प्रांत, यूक्लिडीय प्रांत, अद्वितीय गुणनखंडन प्रांत"}
+          - slug: real-analysis
+            name_en: Real Analysis
+            name_hi: वास्तविक विश्लेषण
+            children:
+              - {slug: real-number-system, name_en: "Real number system as an ordered field, completeness, sequences and their limits", name_hi: "क्रमित क्षेत्र के रूप में वास्तविक संख्या प्रणाली, पूर्णता, अनुक्रम एवं उनकी सीमाएँ"}
+              - {slug: series-convergence, name_en: "Series and its convergence, absolute and conditional convergence, rearrangement", name_hi: "श्रेणी एवं उसका अभिसरण, निरपेक्ष एवं सप्रतिबंध अभिसरण, पुनर्विन्यास"}
+              - {slug: continuity-uniform, name_en: "Continuity and uniform continuity, properties of continuous functions on compact sets", name_hi: "सांतत्य एवं एकसमान सांतत्य, संहत समुच्चयों पर संतत फलनों के गुणधर्म"}
+              - {slug: riemann-integrability, name_en: "Riemann integral, improper integrals, fundamental theorems of integral calculus", name_hi: "रीमान समाकल, अनुचित समाकल, समाकलन कलन के मूलभूत प्रमेय"}
+              - {slug: uniform-convergence, name_en: "Sequences and series of functions, uniform convergence", name_hi: "फलनों के अनुक्रम एवं श्रेणियाँ, एकसमान अभिसरण"}
+          - slug: complex-analysis
+            name_en: Complex Analysis
+            name_hi: सम्मिश्र विश्लेषण
+            children:
+              - {slug: analytic-functions, name_en: "Analytic functions, Cauchy–Riemann equations", name_hi: "विश्लेषिक फलन, कोशी–रीमान समीकरण"}
+              - {slug: cauchy-theorem, name_en: "Cauchy's theorem, Cauchy's integral formula", name_hi: "कोशी प्रमेय, कोशी समाकल सूत्र"}
+              - {slug: series-expansions, name_en: "Power series, Taylor's series, Laurent's series", name_hi: "घात श्रेणी, टेलर श्रेणी, लोरां श्रेणी"}
+              - {slug: singularities-residues, name_en: "Singularities, residue theorem, contour integration", name_hi: "विचित्रताएँ, अवशेष प्रमेय, परिरेखा समाकलन"}
+          - slug: linear-programming
+            name_en: Linear Programming
+            name_hi: रैखिक प्रोग्रामन
+            children:
+              - {slug: lp-formulation, name_en: "LP problems, basic solutions, basic feasible solutions, optimal solutions", name_hi: "रैखिक प्रोग्रामन समस्याएँ, आधारी हल, आधारी सुसंगत हल, इष्टतम हल"}
+              - {slug: simplex-duality, name_en: "Graphical method, simplex method, duality", name_hi: "आलेखी विधि, एकधा (सिम्प्लेक्स) विधि, द्वैतता"}
+              - {slug: transportation-assignment, name_en: "Transportation and assignment problems", name_hi: "परिवहन एवं नियतन समस्याएँ"}
+          - slug: partial-differential-equations
+            name_en: Partial Differential Equations
+            name_hi: आंशिक अवकल समीकरण
+            children:
+              - {slug: pde-formation, name_en: "Family of surfaces and formulation of PDEs, first order quasi-linear equations, Cauchy's method of characteristics", name_hi: "पृष्ठ कुल एवं आंशिक अवकल समीकरणों का सूत्रीकरण, प्रथम कोटि कल्प-रैखिक समीकरण, कोशी की अभिलक्षणिक विधि"}
+              - {slug: second-order-linear-pde, name_en: "Second order linear PDEs with constant coefficients, canonical forms", name_hi: "अचर गुणांक वाले द्वितीय कोटि रैखिक आंशिक अवकल समीकरण, विहित रूप"}
+              - {slug: wave-heat-laplace, name_en: "Vibrating string equation, heat equation, Laplace equation and their solutions", name_hi: "कंपित तंत्री समीकरण, ऊष्मा समीकरण, लाप्लास समीकरण एवं उनके हल"}
+          - slug: numerical-analysis
+            name_en: Numerical Analysis and Computer Programming
+            name_hi: संख्यात्मक विश्लेषण एवं कंप्यूटर प्रोग्रामन
+            children:
+              - {slug: root-finding, name_en: "Numerical solution of algebraic and transcendental equations: bisection, Regula-Falsi, Newton–Raphson", name_hi: "बीजीय एवं अबीजीय समीकरणों का सांख्यिक हल: द्विभाजन, रेगुला-फाल्सी, न्यूटन–रैफ्सन"}
+              - {slug: interpolation, name_en: "Interpolation: Newton's and Lagrange's methods", name_hi: "अंतर्वेशन: न्यूटन एवं लाग्रांज विधियाँ"}
+              - {slug: numerical-integration, name_en: "Numerical integration: trapezoidal, Simpson's rules, Gaussian quadrature", name_hi: "सांख्यिक समाकलन: समलंबी, सिम्पसन नियम, गाउसीय क्षेत्रकलन"}
+              - {slug: numerical-odes, name_en: "Numerical solution of ODEs: Euler and Runge–Kutta methods", name_hi: "साधारण अवकल समीकरणों का सांख्यिक हल: ऑयलर एवं रुंगे–कुट्टा विधियाँ"}
+              - {slug: number-systems-algorithms, name_en: "Number systems, errors, algorithms and flowcharts", name_hi: "संख्या पद्धतियाँ, त्रुटियाँ, कलन विधियाँ एवं प्रवाह संचित्र"}
+          - slug: mechanics-fluid-dynamics
+            name_en: Mechanics and Fluid Dynamics
+            name_hi: यांत्रिकी एवं तरल गतिकी
+            children:
+              - {slug: lagrangian-hamiltonian, name_en: "Generalized coordinates, D'Alembert's principle, Lagrange's and Hamilton's equations", name_hi: "व्यापीकृत निर्देशांक, दालम्बेर सिद्धांत, लाग्रांज एवं हैमिल्टन समीकरण"}
+              - {slug: rigid-body-motion, name_en: "Moment of inertia, motion of rigid bodies in two dimensions", name_hi: "जड़त्व आघूर्ण, द्विविम में दृढ़ पिंडों की गति"}
+              - {slug: fluid-kinematics, name_en: "Equation of continuity, Euler's equation of motion, streamlines, potential flow", name_hi: "सांतत्य समीकरण, ऑयलर गति समीकरण, धारा रेखाएँ, विभव प्रवाह"}
+              - {slug: navier-stokes, name_en: "Navier–Stokes equation for a viscous fluid", name_hi: "श्यान तरल हेतु नेवियर–स्टोक्स समीकरण"}

@@ -1,0 +1,53 @@
+# Extraction reference set — UPSC Prelims GS Paper I, 2026, questions 1-10.
+#
+# Purpose: measure extraction accuracy per model tier. `extract_scan` routes GS papers
+# to the `light` tier (Haiku); nobody has verified that Haiku can actually read a
+# Devanagari scan well enough. Scoring a real API run against this reference turns that
+# from an assumption into a number — and it is the same number the public /trust report
+# is meant to publish.
+#
+# Manifest only: the transcript itself lives in R2, per the repo convention that
+# benchmark corpora are never committed. Verify with the sha256 below before use.
+
+set_id: prelims_gs1_2026_extraction
+description: >
+  Bilingual reference transcript of the first 10 questions of the 2026 Prelims
+  General Studies Paper I (Series A), including all MCQ options in English and Hindi.
+
+source:
+  bucket_role: scans           # KASAUTI_R2_BUCKET_SCANS
+  paper_key: Prelims/Paper1/2026.pdf
+  slice_key: derived/Prelims/Paper1/2026_p002-005.pdf
+  pages: "2-5"
+  booklet_series: A            # answer keys are series-specific; do not mix series
+  exam_code: upsc-cse
+  paper_code: prelims-gs1
+  year: 2026
+
+reference:
+  key: derived/benchmark/prelims_gs1_2026_q1-10_reference.json
+  sha256: baf191e26b2a1a514e73fade95efa1ecd9a7edb6513d81a2ae78516e0c5a8e2f
+  bytes: 20870
+  schema: ScanExtraction
+  question_numbers: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+
+provenance:
+  transcribed_by: claude-code       # not the Anthropic API — no API key was used
+  transcribed_on: 2026-08-14
+  method: >
+    Pages rendered at 2x with scripts/pdf_pages.py and read directly, then composed
+    into a schema-valid ScanExtraction and validated through FileQueueProvider.
+  verified_against_answer_key: true  # official Series A provisional key, all 10 matched
+
+known_limits:
+  - >
+    This is a quality CEILING, not a typical result. It was produced by a much larger
+    model than the `light` tier the pipeline actually uses, so a high score here does
+    not imply the cheap tier suffices.
+  - >
+    `marks` is null throughout: marks are not printed per question on the paper. The
+    official key records 100 questions / 200 marks, so 2.0 can be backfilled
+    deterministically, but it was not transcribed as if it were printed.
+  - >
+    `is_correct` is null throughout by design. Correctness comes only from the official
+    answer key via scripts/load_answer_key.py, never from extraction.

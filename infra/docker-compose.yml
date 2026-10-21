@@ -1,0 +1,61 @@
+# Local dev: `docker compose -f infra/docker-compose.yml up postgres redis`
+# Production (single VPS): all services; Postgres is expected to be managed in prod —
+# the postgres service here is for local dev parity only.
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: kasauti
+      POSTGRES_PASSWORD: kasauti
+      POSTGRES_DB: kasauti
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
+  api:
+    build:
+      context: ..
+      dockerfile: infra/Dockerfile.api
+    env_file: ../.env
+    volumes:
+      - ../content:/app/content:ro   # founder-editable rubrics/prompts, no redeploy needed
+    depends_on: [postgres, redis]
+    profiles: [prod]
+
+  worker:
+    build:
+      context: ..
+      dockerfile: infra/Dockerfile.worker
+    env_file: ../.env
+    volumes:
+      - ../content:/app/content:ro
+    depends_on: [postgres, redis]
+    profiles: [prod]
+
+  web:
+    build:
+      context: ../apps/web
+    env_file: ../.env
+    depends_on: [api]
+    profiles: [prod]
+
+  caddy:
+    image: caddy:2-alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+    depends_on: [api, web]
+    profiles: [prod]
+
+volumes:
+  pgdata:
+  caddy_data:

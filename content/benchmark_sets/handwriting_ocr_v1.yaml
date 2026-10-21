@@ -1,0 +1,88 @@
+# Handwriting transcription reference set — the Hindi/English parity measurement.
+#
+# STATUS: a collection spec, not yet a set. The founder is sourcing the booklets as of
+# 2026-09-01. `scripts/score_transcription.py` refuses to run while `status` says so,
+# rather than scoring an empty set and printing a reassuring number.
+#
+# Why this set exists: Hindi is low-resource for handwriting recognition, so the default
+# hypothesis must be that the reader finds fewer words — and therefore fewer rubric content
+# points — in a Hindi answer than in an English answer of equal quality. That would harm the
+# cohort with the least access to good human evaluation, and it is a launch blocker rather
+# than a metric. The "96% Devanagari accuracy" figures in circulation are isolated character
+# classification, not running page-level handwriting, and do not transfer.
+#
+# Manifest only. Reference transcripts are a labeled corpus and are never committed
+# (.gitignore blocks labeled_corpus/ and gold_standard/); point `reference.local_dir` or
+# `--references` at your local copy.
+
+set_id: handwriting_ocr_v1
+status: awaiting_source
+description: >
+  Hand-made reference transcripts of real handwritten UPSC Mains answer pages, in Hindi
+  and English, under both fair-copy and exam-condition writing.
+
+## What to collect --------------------------------------------------------------------
+#
+# Marks are NOT wanted and would not be used. No UPSC-marked script has ever been
+# released, so an evaluator's number on a booklet is a coaching evaluator's opinion, and
+# this measurement is about reading the page, not judging it.
+
+collection_spec:
+  minimum:
+    hi: 25          # pages, the case that actually gates launch
+    en: 25          # pages, the comparison arm — without it there is no parity number
+  wanted:
+    - Handwritten Devanagari, from as many different hands as possible. Twenty-five pages
+      from one writer measures one person's handwriting, not the language.
+    - Exam-condition script above fair copies. Hurried, dense, corrected-in-place writing
+      with strike-throughs and marginal insertions is the regime learners will submit in;
+      a published fair copy is the easy case and flatters the number.
+    - Phone photographs above flatbed scans, for the same reason - skew, shadow, uneven
+      lighting and creased paper are what will actually arrive.
+    - The same question answered in both languages where possible, which makes the
+      comparison paired rather than merely two groups.
+  not_needed:
+    - Marks, grades, evaluator comments or model answers of any kind.
+    - Toppers specifically. Legible handwriting is the unrepresentative case.
+  reference_transcripts: >
+    A plain UTF-8 text file per page, named <sample_id>.txt, holding exactly what is on
+    the page - the candidate's own spelling, grammar and abbreviations, struck-through
+    text omitted. Produce these by correcting a machine transcript
+    (scripts/transcribe_answer.py) rather than typing from scratch; the corrections are
+    the ground truth and cost a fraction of the effort. Whoever corrects must read the
+    ink, not the sense: writing down the word that ought to be there is the exact error
+    being measured, and doing it in the reference makes the error invisible.
+
+## Where the material lives ------------------------------------------------------------
+
+source:
+  bucket_role: scans           # KASAUTI_R2_BUCKET_SCANS
+  prefix: derived/handwriting/ # one PDF or image per sample, keyed by sample id
+
+reference:
+  # Never committed. A local path, not an R2 key, because these are corrected by hand.
+  local_dir: var/handwriting_reference/
+  encoding: utf-8
+
+## Samples -----------------------------------------------------------------------------
+#
+# One entry per page. `regime` records how the page was produced, because a set that is
+# accidentally all fair copies will report an error rate no learner will ever see.
+#
+# samples:
+#   - id: hi-001
+#     language: hi          # hi | en
+#     regime: exam          # exam | fair_copy
+#     source_key: derived/handwriting/hi-001.pdf
+#     note: phone photo, folded page
+
+samples: []
+
+known_limits:
+  - >
+    Until this set has several writers per language, the CER measures the hands collected
+    rather than the language, and the parity interval will be wide.
+  - >
+    Reference transcripts are made by correcting a machine transcript, so a word both the
+    machine and the corrector misread the same way counts as correct. That biases the
+    reported CER downward, in both languages.

@@ -1,0 +1,32 @@
+# UPSC CSE Prelims papers.
+# Key architecture point (MVP scope doc): UPSC publishes a detailed syllabus only
+# for Mains. Prelims papers have NO topic tree of their own — their questions are
+# tagged against Mains subjects listed in tag_subjects. Extend tag_subjects as
+# more Mains subjects get seeded (gs1/gs3/gs4 later).
+exam:
+  code: upsc-cse
+  name_en: UPSC Civil Services Examination
+  name_hi: संघ लोक सेवा आयोग सिविल सेवा परीक्षा
+
+papers:
+  - code: prelims-gs1
+    stage: prelims
+    name_en: "Preliminary Examination — General Studies Paper I"
+    name_hi: "प्रारंभिक परीक्षा — सामान्य अध्ययन प्रश्नपत्र I"
+    # Covers the whole Prelims Paper I syllabus: history and culture + geography +
+    # society (gs1), polity and governance + IR (gs2), economy + environment +
+    # science (gs3).
+    #
+    # gs4 is capped at max_depth 1, i.e. the eight broad ethics headings only, not the
+    # 35-topic subtree. (Depth counts ltree labels below the root, and the root label is
+    # the subject code — so `gs4.attitude` is depth 1 and `gs4.attitude.moral_political`
+    # is depth 2.) Ethics is a rare Prelims visitor: three items in 2026 and none
+    # in earlier years. Offering fine-grained ethics topics to the tagger would invite
+    # spuriously precise tags on a thin corpus, and it inflated the candidate list from
+    # 89 to 124 topics — a list that is resent with every tagging call.
+    # Mains GS4 still uses the full depth; the cap applies only to this mapping.
+    tag_subjects:
+      - gs1
+      - gs2
+      - gs3
+      - {code: gs4, max_depth: 1}

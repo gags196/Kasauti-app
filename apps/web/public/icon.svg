@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Kasauti">
+  <!-- कसौटी means touchstone: the dark stone a claim is rubbed against to test it. The
+       mark is that stone with a single assay streak, which is also what the product does
+       to a coaching-circuit claim. -->
+  <rect width="512" height="512" rx="96" fill="#2b2118"/>
+  <path d="M150 372 L300 140" stroke="#e8b64c" stroke-width="34" stroke-linecap="round"/>
+  <path d="M214 372 L364 140" stroke="#c2453a" stroke-width="34" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,131 @@
+# "Evaluate the role of subsidiary alliance policy in turning 'the British Empire in
+# India' into 'the British Empire of India'." (10 marks, 150 words)
+#
+# First GS rubric authored against a real transcribed answer (Shakti Dubey AIR 1 2024,
+# see benchmarks/reports/mains-eval/2026-09-01_ground-truth-and-ocr-probe.md).
+# Written honestly, the way an examiner actually reads this question — which is what
+# exposes the DSL gap. See the note at the foot of the file.
+#
+# NOT a UPSC question. This rubric first carried `question_ref: {2024, mains-gs1, "2"}`,
+# which the evaluator resolved against the corpus to UPSC's actual 2024 GS1 Q2 — the
+# Pallavas of Kanchi — and judged this answer against that. The booklet is a Vajiram &
+# Ravi *test series* paper, exactly as the ground-truth probe recorded; the rubric then
+# quietly claimed UPSC provenance for it anyway. That is the same error the whole design
+# guards against (attributing to UPSC something UPSC never produced), arriving through a
+# metadata field. The question now travels with the rubric and names its source.
+
+rubric_id: gs1-2024-q2-subsidiary-alliance-v1
+topic_path: gs1.modern_indian_history
+total_marks: 10
+
+question_text_en: >-
+  Evaluate the role of subsidiary alliance policy in turning 'the British Empire in India'
+  into 'the British Empire of India'. (10 marks, 150 words)
+question_source: >-
+  Vajiram & Ravi UPSC Mains test series (GS Paper 1), not a UPSC past paper. The answer
+  this rubric was authored against is Shakti Dubey's (AIR 1, CSE 2024) test-series copy.
+
+steps:
+  - id: attribute-and-define
+    description_en: >-
+      Identifies subsidiary alliance as the instrument in question and attributes it to
+      Wellesley (Richard Wellesley / Lord Wellesley, 1798).
+    description_hi: >-
+      सहायक संधि को प्रश्नगत नीति के रूप में पहचानता है और उसे वेलेजली से जोड़ता है।
+    marks: 2
+    verification:
+      method: llm_judged
+      rubric_prompt_ref: evaluation/gs_content_point_v1.md
+
+  - id: treaty-features
+    description_en: >-
+      The terms of the alliance. A strong 150-word answer states three or more of
+      these; it is not expected to state all six, and six are not worth twice three.
+    description_hi: >-
+      संधि की शर्तें। एक सुदृढ़ उत्तर इनमें से तीन या अधिक का उल्लेख करता है।
+    credit_cap: 3
+    expect_k: 3
+    points:
+      - id: feature-no-own-army
+        description_en: The signatory state could not maintain an army of its own.
+        marks: 1
+        verification:
+          method: llm_judged
+          rubric_prompt_ref: evaluation/gs_content_point_v1.md
+
+      - id: feature-troops-at-state-cost
+        description_en: >-
+          British troops were stationed in the state's territory and maintained at the
+          state's own expense (or territory ceded in lieu of payment).
+        marks: 1
+        verification:
+          method: llm_judged
+          rubric_prompt_ref: evaluation/gs_content_point_v1.md
+
+      - id: feature-no-foreign-policy
+        description_en: The state surrendered an independent foreign policy.
+        marks: 1
+        verification:
+          method: llm_judged
+          rubric_prompt_ref: evaluation/gs_content_point_v1.md
+
+      - id: feature-no-european-relations
+        description_en: >-
+          The state could not engage other European powers (French, Portuguese)
+          without British permission.
+        marks: 1
+        verification:
+          method: llm_judged
+          rubric_prompt_ref: evaluation/gs_content_point_v1.md
+
+      - id: feature-british-resident
+        description_en: A British Resident/official was stationed at the state's court.
+        marks: 1
+        verification:
+          method: llm_judged
+          rubric_prompt_ref: evaluation/gs_content_point_v1.md
+
+      - id: feature-no-europeans-employed
+        description_en: The state could not employ Europeans without British consent.
+        marks: 1
+        verification:
+          method: llm_judged
+          rubric_prompt_ref: evaluation/gs_content_point_v1.md
+
+  - id: names-annexed-states
+    description_en: >-
+      Names at least two states brought under British control by this route
+      (Hyderabad, Awadh, Mysore, Satara, Bharatpur, Jhansi, Nagpur, the Marathas).
+    marks: 2
+    verification:
+      method: llm_judged
+      rubric_prompt_ref: evaluation/gs_content_point_v1.md
+
+  - id: links-doctrine-of-lapse
+    description_en: >-
+      Connects subsidiary alliance to its extension — Dalhousie's Doctrine of Lapse,
+      or the wider doctrine of paramountcy.
+    marks: 1
+    verification:
+      method: llm_judged
+      rubric_prompt_ref: evaluation/gs_content_point_v1.md
+
+  - id: addresses-in-vs-of
+    description_en: >-
+      Engages the question's actual framing — the shift from a trading presence
+      *in* India to sovereign paramountcy *of* India — rather than only listing
+      treaty terms.
+    marks: 2
+    verification:
+      method: llm_judged
+      rubric_prompt_ref: evaluation/gs_content_point_v1.md
+
+partial_credit_rules:
+  - >-
+    Marks here order and weight the feedback; they are not summed into a score shown to
+    the learner. No UPSC-marked ground truth exists for any Mains answer, so a predicted
+    mark would be unfalsifiable — what is reported is which points were hit and missed,
+    with the learner's own words quoted as evidence.
+  - >-
+    `names-annexed-states` is satisfied by any two correct states. Do not penalise a
+    state that is correct but not in the listed set.

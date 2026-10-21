@@ -1,0 +1,135 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kasauti.in/schemas/rubric.schema.json",
+  "title": "Kasauti step-marking rubric",
+  "type": "object",
+  "required": ["rubric_id", "topic_path", "total_marks", "steps"],
+  "additionalProperties": false,
+  "properties": {
+    "rubric_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*-v[0-9]+$",
+      "description": "Slug ending in a version suffix, e.g. maths-ode-2nd-order-v3"
+    },
+    "topic_path": {
+      "type": "string",
+      "pattern": "^[a-z0-9_]+(\\.[a-z0-9_-]+)*$",
+      "description": "ltree-style taxonomy path this rubric applies to"
+    },
+    "total_marks": { "type": "number", "exclusiveMinimum": 0 },
+    "question_ref": {
+      "type": "object",
+      "description": "Link to the PYQ this rubric grades — ONLY for a question that is actually in the corpus, i.e. one UPSC printed. The evaluator resolves this against the ingested paper and judges the answer against the wording it finds, so a ref pointing at the wrong row silently judges the answer against a different question. Most practice answers come from coaching test series rather than a UPSC paper; those rubrics carry question_text_en + question_source instead.",
+      "properties": {
+        "year": { "type": "integer" },
+        "paper": { "type": "string" },
+        "question_number": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "question_text_en": {
+      "type": "string",
+      "description": "The question verbatim, for a rubric that grades a question not in the PYQ corpus. Required with question_source when question_ref is absent."
+    },
+    "question_text_hi": { "type": "string" },
+    "question_source": {
+      "type": "string",
+      "description": "Where a non-PYQ question comes from — the coaching institute and test series, say. Naming it is how a test-series question stops being mistakable for a UPSC one, which is the same distinction the whole no-predicted-mark design rests on."
+    },
+    "steps": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "oneOf": [
+          { "$ref": "#/$defs/step" },
+          { "$ref": "#/$defs/group" }
+        ]
+      }
+    },
+    "partial_credit_rules": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Free-text rules applied by the engine's carry-forward logic and LLM judge context"
+    }
+  },
+  "$defs": {
+    "group": {
+      "type": "object",
+      "description": "A set of ALTERNATIVE credit points, of which a strong answer makes only some. Marking a Mains answer is not a step chain: 'any three of these six treaty features' is the normal shape, and the six are not worth twice the three. Collapsing them into one step would score correctly but destroy the per-point feedback, which is the product — a learner needs to know which of the six they missed. So the points stay individually detectable and the group caps what they are collectively worth.",
+      "required": ["id", "credit_cap", "points"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+        "description_en": { "type": "string" },
+        "description_hi": { "type": "string" },
+        "credit_cap": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "Maximum marks creditable from this group, however many points are hit. This is what the group contributes to total_marks."
+        },
+        "expect_k": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "How many points a strong answer is expected to make. Feedback-only — it never affects arithmetic. Omit when every point is expected."
+        },
+        "points": {
+          "type": "array",
+          "minItems": 2,
+          "items": { "$ref": "#/$defs/step" }
+        }
+      }
+    },
+    "step": {
+      "type": "object",
+      "required": ["id", "marks", "verification"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+        "description_en": { "type": "string" },
+        "description_hi": { "type": "string" },
+        "marks": { "type": "number", "exclusiveMinimum": 0 },
+        "verification": {
+          "oneOf": [
+            { "$ref": "#/$defs/symbolicVerification" },
+            { "$ref": "#/$defs/llmJudgedVerification" },
+            { "$ref": "#/$defs/humanVerification" }
+          ]
+        }
+      }
+    },
+    "symbolicVerification": {
+      "type": "object",
+      "required": ["method", "check"],
+      "additionalProperties": false,
+      "properties": {
+        "method": { "const": "symbolic" },
+        "check": {
+          "type": "string",
+          "description": "Name of a registered checker in domain/rubric/symbolic.py"
+        },
+        "params": { "type": "object" }
+      }
+    },
+    "llmJudgedVerification": {
+      "type": "object",
+      "required": ["method", "rubric_prompt_ref"],
+      "additionalProperties": false,
+      "properties": {
+        "method": { "const": "llm_judged" },
+        "rubric_prompt_ref": {
+          "type": "string",
+          "description": "Path under content/prompts/ used to judge this step"
+        }
+      }
+    },
+    "humanVerification": {
+      "type": "object",
+      "required": ["method"],
+      "additionalProperties": false,
+      "properties": {
+        "method": { "const": "human" },
+        "note": { "type": "string" }
+      }
+    }
+  }
+}

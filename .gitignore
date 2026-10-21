@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# Node
+node_modules/
+.next/
+out/
+
+# Env & secrets — never commit
+.env
+.env.*
+!.env.example
+
+# Labeled answer corpus / gold-standard material — never commit (plan §7a)
+labeled_corpus/
+gold_standard/
+# Learners'/toppers' handwritten answer booklets, and the reference transcripts made
+# from them. Other people's writing, redistributed by coaching institutes, hundreds of
+# MB of scans — none of it belongs in git. The repo carries only the manifest that
+# describes the set (content/benchmark_sets/handwriting_ocr_v1.yaml).
+Evaluated Paper/
+var/handwriting_reference/
+var/transcripts/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Build artifacts
+dist/
+build/
+
+# TypeScript incremental build cache
+*.tsbuildinfo
+
+# Local LLM request queue (dev-only, holds copies of source PDFs)
+var/

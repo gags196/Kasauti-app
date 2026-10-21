@@ -1,0 +1,8 @@
+packages:
+  - "apps/web"
+
+# Next.js toolchain native builds — both are first-party dev tooling, not
+# transitive surprises, so they are allowed to run their install scripts.
+allowBuilds:
+  '@parcel/watcher': true
+  '@swc/core': true

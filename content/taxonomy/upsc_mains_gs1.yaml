@@ -1,0 +1,89 @@
+# UPSC CSE Mains — GS Paper I. Headings follow the official syllabus in the UPSC
+# notification (Section III, Part B, Paper-II).
+#
+# One deliberate departure: `ancient-medieval-history` is NOT in the Mains GS1 syllabus,
+# which starts history "from about the middle of the eighteenth century". It exists
+# because Prelims tests ancient and medieval India heavily — 6 of the first 10 questions
+# of the 2026 paper were Harappan, Vedic, Pali/Jain and temple-architecture questions.
+# Prelims tags onto this tree (paper_subject_map), so without this branch roughly half of
+# every Prelims paper would be untaggable and topic rankings would be badly skewed.
+exam:
+  code: upsc-cse
+  name_en: UPSC Civil Services Examination
+  name_hi: संघ लोक सेवा आयोग सिविल सेवा परीक्षा
+
+papers:
+  - code: mains-gs1
+    stage: mains
+    name_en: "General Studies Paper I — Indian Heritage and Culture, History and Geography of the World and Society"
+    name_hi: "सामान्य अध्ययन प्रश्नपत्र I — भारतीय विरासत और संस्कृति, विश्व एवं समाज का इतिहास और भूगोल"
+    subjects:
+      - code: gs1
+        name_en: General Studies I
+        name_hi: सामान्य अध्ययन I
+        topics:
+          - slug: indian-culture
+            name_en: Indian Heritage and Culture
+            name_hi: भारतीय विरासत एवं संस्कृति
+            children:
+              - {slug: art-forms, name_en: "Salient aspects of art forms from ancient to modern times", name_hi: "प्राचीन से आधुनिक काल तक कला रूपों के प्रमुख पहलू"}
+              - {slug: architecture-sculpture, name_en: "Architecture and sculpture from ancient to modern times", name_hi: "प्राचीन से आधुनिक काल तक स्थापत्य एवं मूर्तिकला"}
+              - {slug: literature-languages, name_en: "Literature and languages from ancient to modern times", name_hi: "प्राचीन से आधुनिक काल तक साहित्य एवं भाषाएँ"}
+              - {slug: performing-arts, name_en: "Music, dance, theatre and other performing arts", name_hi: "संगीत, नृत्य, रंगमंच एवं अन्य प्रदर्शनकारी कलाएँ"}
+
+          - slug: ancient-medieval-history
+            name_en: Ancient and Medieval India
+            name_hi: प्राचीन एवं मध्यकालीन भारत
+            description_en: >-
+              Not part of the Mains GS1 syllabus, which begins in the mid-eighteenth
+              century. Retained as a tagging target because Prelims tests this period
+              heavily and Prelims questions tag against the Mains tree.
+            description_hi: >-
+              मुख्य परीक्षा के सामान्य अध्ययन-I पाठ्यक्रम का भाग नहीं; प्रारंभिक परीक्षा
+              हेतु वर्गीकरण लक्ष्य के रूप में रखा गया है।
+            children:
+              - {slug: indus-valley-civilization, name_en: "Indus Valley Civilization — settlements, material culture, decline", name_hi: "सिंधु घाटी सभ्यता — बस्तियाँ, भौतिक संस्कृति, पतन"}
+              - {slug: vedic-period, name_en: "Vedic period — society, economy, polity and texts", name_hi: "वैदिक काल — समाज, अर्थव्यवस्था, राजव्यवस्था एवं ग्रंथ"}
+              - {slug: religious-movements, name_en: "Buddhism, Jainism and other heterodox movements", name_hi: "बौद्ध धर्म, जैन धर्म एवं अन्य नास्तिक सम्प्रदाय"}
+              - {slug: mauryan-gupta-empires, name_en: "Mahajanapadas, Mauryan and Gupta empires; early coinage and urbanisation", name_hi: "महाजनपद, मौर्य एवं गुप्त साम्राज्य; प्रारंभिक मुद्रा एवं नगरीकरण"}
+              - {slug: medieval-kingdoms, name_en: "Delhi Sultanate, Mughal empire and regional kingdoms", name_hi: "दिल्ली सल्तनत, मुगल साम्राज्य एवं क्षेत्रीय राज्य"}
+              - {slug: bhakti-sufi-movements, name_en: "Bhakti and Sufi movements", name_hi: "भक्ति एवं सूफी आंदोलन"}
+
+          - slug: modern-indian-history
+            name_en: Modern Indian History
+            name_hi: आधुनिक भारतीय इतिहास
+            children:
+              - {slug: colonial-expansion, name_en: "Colonial expansion and its administrative and economic impact", name_hi: "औपनिवेशिक विस्तार तथा उसका प्रशासनिक एवं आर्थिक प्रभाव"}
+              - {slug: socio-religious-reform, name_en: "Nineteenth-century socio-religious reform movements", name_hi: "उन्नीसवीं सदी के सामाजिक-धार्मिक सुधार आंदोलन"}
+              - {slug: freedom-struggle, name_en: "The Freedom Struggle — stages and contributors from different parts of the country", name_hi: "स्वतंत्रता संग्राम — विभिन्न चरण तथा देश के विभिन्न भागों से योगदानकर्ता"}
+              - {slug: post-independence-consolidation, name_en: "Post-independence consolidation and reorganization within the country", name_hi: "स्वतंत्रता के पश्चात देश का सुदृढ़ीकरण एवं पुनर्गठन"}
+
+          - slug: world-history
+            name_en: History of the World
+            name_hi: विश्व इतिहास
+            children:
+              - {slug: industrial-revolution, name_en: "Industrial revolution and its consequences", name_hi: "औद्योगिक क्रांति एवं उसके परिणाम"}
+              - {slug: world-wars, name_en: "World wars and the redrawal of national boundaries", name_hi: "विश्व युद्ध एवं राष्ट्रीय सीमाओं का पुनर्निर्धारण"}
+              - {slug: colonization-decolonization, name_en: "Colonization and decolonization", name_hi: "उपनिवेशीकरण एवं विऔपनिवेशीकरण"}
+              - {slug: political-philosophies, name_en: "Political philosophies — communism, capitalism, socialism; their forms and effects", name_hi: "राजनीतिक विचारधाराएँ — साम्यवाद, पूँजीवाद, समाजवाद; उनके स्वरूप एवं प्रभाव"}
+
+          - slug: indian-society
+            name_en: Indian Society
+            name_hi: भारतीय समाज
+            children:
+              - {slug: society-features-diversity, name_en: "Salient features of Indian society and the diversity of India", name_hi: "भारतीय समाज की प्रमुख विशेषताएँ एवं भारत की विविधता"}
+              - {slug: women-and-population, name_en: "Role of women and women's organizations; population and associated issues", name_hi: "महिलाओं एवं महिला संगठनों की भूमिका; जनसंख्या तथा संबंधित मुद्दे"}
+              - {slug: poverty-urbanization, name_en: "Poverty and developmental issues; urbanization, its problems and remedies", name_hi: "गरीबी एवं विकास संबंधी मुद्दे; नगरीकरण, उसकी समस्याएँ एवं उपचार"}
+              - {slug: globalization-effects, name_en: "Effects of globalization on Indian society", name_hi: "भारतीय समाज पर वैश्वीकरण के प्रभाव"}
+              - {slug: social-empowerment, name_en: "Social empowerment, communalism, regionalism and secularism", name_hi: "सामाजिक सशक्तीकरण, सांप्रदायिकता, क्षेत्रवाद एवं पंथनिरपेक्षता"}
+
+          - slug: geography
+            name_en: Geography of the World and India
+            name_hi: विश्व एवं भारत का भूगोल
+            children:
+              - {slug: physical-geography, name_en: "Salient features of the world's physical geography", name_hi: "विश्व के भौतिक भूगोल की प्रमुख विशेषताएँ"}
+              - {slug: resource-distribution, name_en: "Distribution of key natural resources across the world, including South Asia and the Indian sub-continent", name_hi: "विश्व भर में प्रमुख प्राकृतिक संसाधनों का वितरण, दक्षिण एशिया एवं भारतीय उपमहाद्वीप सहित"}
+              - {slug: industry-location, name_en: "Factors responsible for the location of primary, secondary and tertiary sector industries", name_hi: "प्राथमिक, द्वितीयक एवं तृतीयक क्षेत्र के उद्योगों की अवस्थिति के कारक"}
+              - {slug: geophysical-phenomena, name_en: "Important geophysical phenomena — earthquakes, tsunami, volcanic activity, cyclones", name_hi: "महत्वपूर्ण भूभौतिकीय परिघटनाएँ — भूकंप, सुनामी, ज्वालामुखीय गतिविधि, चक्रवात"}
+              - {slug: changes-in-geographical-features, name_en: "Changes in critical geographical features, water-bodies, ice-caps, flora and fauna", name_hi: "महत्वपूर्ण भौगोलिक विशेषताओं, जलाशयों, हिम-शिखरों तथा वनस्पति एवं जीव-जंतुओं में परिवर्तन"}
+              - {slug: indian-geography, name_en: "Physical, social and economic geography of India", name_hi: "भारत का भौतिक, सामाजिक एवं आर्थिक भूगोल"}

@@ -1,0 +1,118 @@
+# Regression fixture: the first worked example, frozen.
+#
+# benchmarks/reports/mains-eval/2026-09-01_worked-example-gs1-q2.md judged this answer
+# against this rubric by hand, through the same ContentPointBatch contract the engine
+# uses, before the engine existed. The verdicts below are that run's, verbatim.
+#
+# What the test built on this fixture checks is the ENGINE, not the model: replay these
+# verdicts and the report must come out as published — every quote located in the
+# transcript, the treaty-features group reading 5 of 6 against an expect_k of 3, and one
+# partial. A quote that stops matching means the transcript or the verifier moved; a
+# rollup that stops matching means the group semantics did.
+#
+# The answer is a published topper's fair copy (Shakti Dubey, AIR 1, CSE 2024), already
+# reproduced in the probe report in this repo — it is not part of the private labeled
+# corpus and does not belong under labeled_corpus/.
+#
+# One caveat carried from the probe: the fourth state name is transcribed here as
+# "Bharatpur", which is the historically correct princely state, but the pen-strokes read
+# closer to "Bhagatpur". That ambiguity is the documented failure mode (a reader smoothing
+# unclear handwriting toward the name that ought to be there), and it is why the rubric
+# point asks for any two states rather than one specific one.
+
+rubric_id: gs1-2024-q2-subsidiary-alliance-v1
+language: en
+
+question: >-
+  Evaluate the role of subsidiary alliance policy in turning 'the British Empire in India'
+  into 'the British Empire of India'. (10 marks, 150 words)
+
+answer: |
+  Advent of British in India as a trading company & their withdrawal as a colonial power
+  was possible because of their imperialist policies, one of the most important being —
+  Subsidiary Alliance.
+
+  Subsidiary Alliance:
+  (1) This policy was put forward by Richard Wellesley
+  (2) The states which signed Subsidiary Alliance Treaty could not have an army of their own
+  (3) They had to station British army in their territory, which were to be maintained by
+      the states themselves
+  (4) The state could not have any independent foreign policy
+  (5) They could not engage with Portuguese or French without permission of British
+  (6) One British official was to be stationed in their court.
+
+  Hyderabad, Bharatpur, Satara, Jaunpur and more states fell prey to this British policy
+  of paramountcy.
+
+  This was further extended by "Doctrine of Lapse" under Dalhousie, under which states
+  that had signed Subsidiary Alliance were annexed on grounds of no biological heir /
+  maladministration.
+
+  Thus Subsidiary Alliance led to annexation of various territories & further led to
+  expansion of British control & helped in establishing the British Empire.
+
+# The hand-judged verdicts, in the shape ContentPointBatch returns them.
+verdicts:
+  attribute-and-define:
+    present: true
+    quote: This policy was put forward by Richard Wellesley
+    comment: You name the policy and attribute it to Wellesley.
+  feature-no-own-army:
+    present: true
+    quote: could not have an army of their own
+    comment: Stated directly.
+  feature-troops-at-state-cost:
+    present: true
+    quote: >-
+      They had to station British army in their territory, which were to be maintained by
+      the states themselves
+    comment: Both halves are there — the stationing and who paid for it.
+  feature-no-foreign-policy:
+    present: true
+    quote: The state could not have any independent foreign policy
+    comment: Stated directly.
+  feature-no-european-relations:
+    present: true
+    quote: They could not engage with Portuguese or French without permission of British
+    comment: You name the other European powers specifically.
+  feature-british-resident:
+    present: true
+    quote: One British official was to be stationed in their court
+    comment: Stated, though the office is not named as Resident.
+  feature-no-europeans-employed:
+    present: false
+    quote: null
+    comment: No mention of the bar on employing Europeans without British consent.
+  names-annexed-states:
+    present: true
+    quote: >-
+      Hyderabad, Bharatpur, Satara, Jaunpur ... fell prey to this British policy of
+      paramountcy
+    comment: Hyderabad and Satara are both correct, which is what this point asks for.
+  links-doctrine-of-lapse:
+    present: true
+    quote: further extended by "Doctrine of Lapse" under Dalhousie
+    comment: You connect the policy to its extension under Dalhousie.
+  addresses-in-vs-of:
+    present: true
+    partial: true
+    quote: >-
+      Advent of British in India as a trading company & their withdrawal as a colonial
+      power
+    comment: >-
+      Your opening gestures at the arc from trader to ruler, but the conclusion returns
+      only to "establishing the British Empire" and never to the in/of distinction the
+      question is built on.
+
+# What the engine must produce from the verdicts above.
+expected:
+  hits: 8
+  partials: 1
+  misses: 1
+  unsupported: 0
+  groups:
+    treaty-features:
+      credited: 5
+      missed: 1
+      expect_k: 3
+      over_covered: true

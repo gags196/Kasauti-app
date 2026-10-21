@@ -1,0 +1,86 @@
+# UPSC CSE Mains — GS Paper III. Headings follow the official syllabus in the UPSC
+# notification (Section III, Part B, Paper-IV).
+#
+# Two branches carry Prelims-only material, since Prelims tags against this tree:
+#   science-technology.general-science — Prelims lists "General Science" as its own
+#     heading; Mains GS3 only covers science as developments and applications.
+#   environment-biodiversity.biodiversity-species — Prelims tests species, protected
+#     areas and conservation status directly; Mains phrases this as conservation policy.
+# Current affairs is deliberately NOT a topic: a current-affairs question is always
+# *about* something (a scheme, a species, a summit), so it tags to that substantive
+# topic. Treating it as a topic would create a bucket that accumulates everything and
+# ranks meaninglessly.
+exam:
+  code: upsc-cse
+  name_en: UPSC Civil Services Examination
+  name_hi: संघ लोक सेवा आयोग सिविल सेवा परीक्षा
+
+papers:
+  - code: mains-gs3
+    stage: mains
+    name_en: "General Studies Paper III — Technology, Economic Development, Biodiversity, Environment, Security and Disaster Management"
+    name_hi: "सामान्य अध्ययन प्रश्नपत्र III — प्रौद्योगिकी, आर्थिक विकास, जैव विविधता, पर्यावरण, सुरक्षा एवं आपदा प्रबंधन"
+    subjects:
+      - code: gs3
+        name_en: General Studies III
+        name_hi: सामान्य अध्ययन III
+        topics:
+          - slug: indian-economy
+            name_en: Indian Economy
+            name_hi: भारतीय अर्थव्यवस्था
+            children:
+              - {slug: planning-growth-employment, name_en: "Planning, mobilization of resources, growth, development and employment", name_hi: "नियोजन, संसाधनों का जुटाव, संवृद्धि, विकास एवं रोज़गार"}
+              - {slug: inclusive-growth, name_en: "Inclusive growth and issues arising from it", name_hi: "समावेशी संवृद्धि तथा उससे उत्पन्न मुद्दे"}
+              - {slug: government-budgeting, name_en: "Government budgeting", name_hi: "सरकारी बजट"}
+              - {slug: liberalization-industrial-policy, name_en: "Effects of liberalization; changes in industrial policy and their effect on industrial growth", name_hi: "उदारीकरण के प्रभाव; औद्योगिक नीति में परिवर्तन एवं औद्योगिक संवृद्धि पर उनका प्रभाव"}
+              - {slug: infrastructure, name_en: "Infrastructure — energy, ports, roads, airports, railways", name_hi: "अवसंरचना — ऊर्जा, बंदरगाह, सड़कें, विमानपत्तन, रेलवे"}
+              - {slug: investment-models, name_en: "Investment models", name_hi: "निवेश मॉडल"}
+
+          - slug: agriculture
+            name_en: Agriculture and Food Management
+            name_hi: कृषि एवं खाद्य प्रबंधन
+            children:
+              - {slug: cropping-patterns-irrigation, name_en: "Major crops, cropping patterns, irrigation systems, storage, transport and marketing of produce", name_hi: "प्रमुख फसलें, फसल प्रतिरूप, सिंचाई प्रणालियाँ, भंडारण, परिवहन एवं उपज का विपणन"}
+              - {slug: farm-subsidies-msp-pds, name_en: "Direct and indirect farm subsidies, minimum support prices, Public Distribution System, buffer stocks and food security", name_hi: "प्रत्यक्ष एवं अप्रत्यक्ष कृषि सब्सिडी, न्यूनतम समर्थन मूल्य, सार्वजनिक वितरण प्रणाली, बफर स्टॉक एवं खाद्य सुरक्षा"}
+              - {slug: food-processing, name_en: "Food processing and related industries — scope, location, supply chain management", name_hi: "खाद्य प्रसंस्करण एवं संबंधित उद्योग — विस्तार, अवस्थिति, आपूर्ति शृंखला प्रबंधन"}
+              - {slug: land-reforms, name_en: "Land reforms in India", name_hi: "भारत में भूमि सुधार"}
+              - {slug: animal-rearing, name_en: "Economics of animal-rearing", name_hi: "पशुपालन का अर्थशास्त्र"}
+
+          - slug: science-technology
+            name_en: Science and Technology
+            name_hi: विज्ञान एवं प्रौद्योगिकी
+            children:
+              - {slug: developments-applications, name_en: "Developments in science and technology and their applications in everyday life", name_hi: "विज्ञान एवं प्रौद्योगिकी में विकास तथा दैनिक जीवन में उनके अनुप्रयोग"}
+              - {slug: indian-achievements, name_en: "Achievements of Indians in science and technology; indigenization of technology", name_hi: "विज्ञान एवं प्रौद्योगिकी में भारतीयों की उपलब्धियाँ; प्रौद्योगिकी का स्वदेशीकरण"}
+              - {slug: it-space-computers, name_en: "Awareness in IT, space, computers and robotics", name_hi: "सूचना प्रौद्योगिकी, अंतरिक्ष, कंप्यूटर एवं रोबोटिकी में जागरूकता"}
+              - {slug: biotech-nanotech, name_en: "Biotechnology and nano-technology", name_hi: "जैव प्रौद्योगिकी एवं नैनो प्रौद्योगिकी"}
+              - {slug: intellectual-property-rights, name_en: "Issues relating to intellectual property rights", name_hi: "बौद्धिक संपदा अधिकार संबंधी मुद्दे"}
+              - {slug: general-science, name_en: "General Science — fundamentals of physics, chemistry and biology", name_hi: "सामान्य विज्ञान — भौतिकी, रसायन एवं जीव विज्ञान के मूल सिद्धांत"}
+
+          - slug: environment-biodiversity
+            name_en: Environment, Biodiversity and Climate Change
+            name_hi: पर्यावरण, जैव विविधता एवं जलवायु परिवर्तन
+            children:
+              - {slug: conservation, name_en: "Conservation of environment and natural resources", name_hi: "पर्यावरण एवं प्राकृतिक संसाधनों का संरक्षण"}
+              - {slug: pollution-degradation, name_en: "Environmental pollution and degradation", name_hi: "पर्यावरण प्रदूषण एवं क्षरण"}
+              - {slug: environmental-impact-assessment, name_en: "Environmental impact assessment", name_hi: "पर्यावरणीय प्रभाव आकलन"}
+              - {slug: climate-change, name_en: "Climate change — causes, effects and international response", name_hi: "जलवायु परिवर्तन — कारण, प्रभाव एवं अंतर्राष्ट्रीय प्रतिक्रिया"}
+              - {slug: biodiversity-species, name_en: "Biodiversity — species, habitats, protected areas and conservation status", name_hi: "जैव विविधता — प्रजातियाँ, आवास, संरक्षित क्षेत्र एवं संरक्षण स्थिति"}
+
+          - slug: disaster-management
+            name_en: Disaster and Disaster Management
+            name_hi: आपदा एवं आपदा प्रबंधन
+            children:
+              - {slug: disaster-types, name_en: "Types of disasters and their impact", name_hi: "आपदाओं के प्रकार एवं उनका प्रभाव"}
+              - {slug: disaster-management-framework, name_en: "Institutional and legal framework for disaster management", name_hi: "आपदा प्रबंधन हेतु संस्थागत एवं विधिक ढाँचा"}
+
+          - slug: internal-security
+            name_en: Internal Security
+            name_hi: आंतरिक सुरक्षा
+            children:
+              - {slug: extremism-development-linkage, name_en: "Linkages between development and the spread of extremism", name_hi: "विकास एवं उग्रवाद के प्रसार के बीच संबंध"}
+              - {slug: external-actors, name_en: "Role of external state and non-state actors in creating challenges to internal security", name_hi: "आंतरिक सुरक्षा हेतु चुनौतियाँ उत्पन्न करने में बाह्य राज्य एवं गैर-राज्य कारकों की भूमिका"}
+              - {slug: cyber-security-media, name_en: "Communication networks, media and social networking in internal security; basics of cyber security", name_hi: "आंतरिक सुरक्षा में संचार नेटवर्क, मीडिया एवं सामाजिक संजालन; साइबर सुरक्षा के मूल तत्व"}
+              - {slug: money-laundering, name_en: "Money-laundering and its prevention", name_hi: "धन शोधन एवं उसकी रोकथाम"}
+              - {slug: border-security, name_en: "Security challenges in border areas; linkages of organized crime with terrorism", name_hi: "सीमावर्ती क्षेत्रों में सुरक्षा चुनौतियाँ; संगठित अपराध का आतंकवाद से संबंध"}
+              - {slug: security-forces, name_en: "Various security forces and agencies and their mandate", name_hi: "विभिन्न सुरक्षा बल एवं अभिकरण तथा उनका अधिदेश"}

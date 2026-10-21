@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: pgvector/pgvector:pg16
+        env:
+          POSTGRES_USER: kasauti
+          POSTGRES_PASSWORD: kasauti
+          POSTGRES_DB: kasauti
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U kasauti"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      KASAUTI_DATABASE_URL: postgresql+asyncpg://kasauti:kasauti@localhost:5432/kasauti
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync --all-packages --all-extras
+      - run: uv run ruff check .
+      - run: uv run python scripts/validate_rubrics.py
+      - run: uv run alembic -c apps/api/alembic.ini upgrade head
+      - run: uv run python scripts/seed_taxonomy.py
+      # With Postgres up, DB-backed tests run instead of skipping.
+      - run: uv run pytest -ra

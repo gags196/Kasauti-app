@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+/*
+ * Reading-first palette. Aspirants read long question text for hours, often on
+ * a phone in poor light, so the surface is warm paper rather than pure white
+ * and body text never drops below full contrast.
+ */
+@theme {
+  --color-paper: oklch(98.5% 0.006 85);
+  --color-paper-raised: oklch(100% 0 0);
+  --color-ink: oklch(24% 0.015 265);
+  --color-ink-muted: oklch(48% 0.014 265);
+  --color-rule: oklch(90% 0.008 265);
+  --color-accent: oklch(48% 0.13 25);
+  --color-accent-soft: oklch(95% 0.03 30);
+  /* The Elimination Lab needs a second state: accent already means "this is the
+     official answer", and a shortcut that would have cost a mark must not read as
+     one. Amber rather than a second red, so the two are separable in low light and
+     for a red-green colour-blind reader. */
+  --color-caution: oklch(52% 0.13 65);
+
+  --font-sans: ui-sans-serif, system-ui, "Segoe UI", sans-serif;
+  /* Devanagari needs a taller line box than Latin to keep matras legible. */
+  --font-deva: "Nirmala UI", "Noto Sans Devanagari", ui-sans-serif, system-ui, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  @theme {
+    --color-paper: oklch(19% 0.012 265);
+    --color-paper-raised: oklch(23% 0.014 265);
+    --color-ink: oklch(94% 0.005 265);
+    --color-ink-muted: oklch(72% 0.012 265);
+    --color-rule: oklch(31% 0.014 265);
+    --color-accent: oklch(76% 0.12 30);
+    --color-accent-soft: oklch(28% 0.04 30);
+    --color-caution: oklch(78% 0.12 70);
+  }
+}
+
+html {
+  color-scheme: light dark;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Any element carrying Devanagari text. */
+:lang(hi),
+.deva {
+  font-family: var(--font-deva);
+  line-height: 1.85;
+}
+
+a {
+  color: inherit;
+}
+
+/*
+ * Stems render LaTeX through KaTeX (components/math-text.tsx). This `.latex` block
+ * styles the separate `math_notation_latex` field, which is a raw-source fallback
+ * shown verbatim for the rare question that carries one.
+ */
+.latex {
+  font-family: ui-monospace, "Cascadia Mono", "SF Mono", monospace;
+  font-size: 0.875rem;
+  white-space: pre-wrap;
+  overflow-x: auto;
+}

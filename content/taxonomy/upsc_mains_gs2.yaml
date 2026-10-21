@@ -1,0 +1,51 @@
+# UPSC CSE Mains — GS Paper II (thin Phase-1 slice, plan scope decision).
+# Purpose: prove the bilingual ingestion pipeline end-to-end on 2–3 years of one
+# GS paper. Full GS taxonomy depth lands with the Phase-2 background backfill.
+exam:
+  code: upsc-cse
+  name_en: UPSC Civil Services Examination
+  name_hi: संघ लोक सेवा आयोग सिविल सेवा परीक्षा
+
+papers:
+  - code: mains-gs2
+    stage: mains
+    name_en: "General Studies Paper II — Governance, Constitution, Polity, Social Justice and International Relations"
+    name_hi: "सामान्य अध्ययन प्रश्नपत्र II — शासन व्यवस्था, संविधान, शासन प्रणाली, सामाजिक न्याय तथा अंतर्राष्ट्रीय संबंध"
+    subjects:
+      - code: gs2
+        name_en: General Studies II
+        name_hi: सामान्य अध्ययन II
+        topics:
+          - slug: constitution
+            name_en: Indian Constitution
+            name_hi: भारतीय संविधान
+            children:
+              - {slug: basic-structure, name_en: "Historical underpinnings, evolution, features, amendments, basic structure", name_hi: "ऐतिहासिक आधार, विकास, विशेषताएँ, संशोधन, मूल संरचना"}
+              - {slug: federalism, name_en: "Functions and responsibilities of the Union and the States, federal structure, devolution", name_hi: "संघ एवं राज्यों के कार्य तथा उत्तरदायित्व, संघीय ढाँचा, शक्तियों का हस्तांतरण"}
+              - {slug: separation-of-powers, name_en: "Separation of powers, dispute redressal mechanisms", name_hi: "शक्तियों का पृथक्करण, विवाद निवारण तंत्र"}
+          - slug: polity
+            name_en: Polity and Governance Structures
+            name_hi: राजव्यवस्था एवं शासन संरचनाएँ
+            children:
+              - {slug: parliament, name_en: "Parliament and State legislatures — structure, functioning, conduct of business", name_hi: "संसद और राज्य विधायिका — संरचना, कार्य, कार्य-संचालन"}
+              - {slug: executive-judiciary, name_en: "Structure, organization and functioning of the Executive and the Judiciary", name_hi: "कार्यपालिका और न्यायपालिका की संरचना, संगठन और कार्य"}
+              - {slug: constitutional-bodies, name_en: "Appointment to constitutional posts; powers and functions of constitutional bodies", name_hi: "संवैधानिक पदों पर नियुक्ति; संवैधानिक निकायों की शक्तियाँ एवं कार्य"}
+          - slug: governance
+            name_en: Governance
+            name_hi: शासन
+            children:
+              - {slug: transparency-accountability, name_en: "Transparency, accountability, e-governance, citizens charters", name_hi: "पारदर्शिता, जवाबदेही, ई-गवर्नेंस, नागरिक घोषणापत्र"}
+              - {slug: welfare-schemes, name_en: "Government policies and welfare schemes for vulnerable sections", name_hi: "कमज़ोर वर्गों हेतु सरकारी नीतियाँ एवं कल्याणकारी योजनाएँ"}
+          - slug: social-justice
+            name_en: Social Justice
+            name_hi: सामाजिक न्याय
+            children:
+              - {slug: health-education, name_en: "Issues relating to development and management of health, education, human resources", name_hi: "स्वास्थ्य, शिक्षा, मानव संसाधन के विकास एवं प्रबंधन से संबंधित मुद्दे"}
+              - {slug: poverty-hunger, name_en: "Issues relating to poverty and hunger", name_hi: "गरीबी एवं भूख से संबंधित मुद्दे"}
+          - slug: international-relations
+            name_en: International Relations
+            name_hi: अंतर्राष्ट्रीय संबंध
+            children:
+              - {slug: india-neighbourhood, name_en: "India and its neighbourhood relations", name_hi: "भारत एवं उसके पड़ोसी देशों से संबंध"}
+              - {slug: groupings-agreements, name_en: "Bilateral, regional and global groupings and agreements involving India", name_hi: "भारत से संबंधित द्विपक्षीय, क्षेत्रीय और वैश्विक समूह और समझौते"}
+              - {slug: international-institutions, name_en: "Important international institutions, agencies and fora", name_hi: "महत्वपूर्ण अंतर्राष्ट्रीय संस्थान, संस्थाएँ और मंच"}

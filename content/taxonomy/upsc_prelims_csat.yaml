@@ -1,0 +1,69 @@
+# UPSC CSE Prelims Paper II (CSAT).
+#
+# Why this file exists when `upsc_prelims.yaml` deliberately has no topic tree:
+# Paper I's published syllabus is seven broad bullets that map cleanly onto the
+# detailed Mains subjects, so its questions tag against those. Paper II's syllabus
+# has no Mains counterpart at all — there is no Mains paper on comprehension,
+# logical reasoning or basic numeracy — so tagging it against the Mains tree would
+# put every item on a bad fit. The headings below are transcribed verbatim from the
+# UPSC notification (Section III, Part A, Paper II); nothing here is invented.
+#
+# The tree is deliberately shallow. Second-level topics exist only where the
+# notification's own parenthetical enumerates them (numeracy and data
+# interpretation). Comprehension and logical reasoning carry the bulk of the paper
+# and could be subdivided a dozen defensible ways — that finer grain belongs to the
+# question-classification pass (format/depth), not to a taxonomy claiming to be
+# UPSC's own.
+#
+# Paper II is a qualifying paper: 33% of 200 marks. Marks per question are 2.5
+# (200 / 80 items), with the usual one-third negative marking.
+exam:
+  code: upsc-cse
+  name_en: UPSC Civil Services Examination
+  name_hi: संघ लोक सेवा आयोग सिविल सेवा परीक्षा
+
+papers:
+  - code: prelims-gs2
+    stage: prelims
+    name_en: "Preliminary Examination — General Studies Paper II (CSAT)"
+    name_hi: "प्रारंभिक परीक्षा — सामान्य अध्ययन प्रश्नपत्र II (सी-सैट)"
+    subjects:
+      - code: csat
+        name_en: Civil Services Aptitude Test
+        name_hi: सिविल सेवा अभिरुचि परीक्षण
+        topics:
+          - slug: comprehension
+            name_en: Comprehension
+            name_hi: बोधगम्यता
+            description_en: "Items answered solely from a passage printed with them."
+            description_hi: "ऐसे प्रश्नांश जिनका उत्तर केवल साथ में दिए गए परिच्छेद से दिया जाता है।"
+
+          - slug: interpersonal-communication
+            name_en: Interpersonal skills including communication skills
+            name_hi: संचार कौशल सहित अंतर-वैयक्तिक कौशल
+
+          - slug: logical-reasoning-analytical-ability
+            name_en: Logical reasoning and analytical ability
+            name_hi: तार्किक कौशल एवं विश्लेषणात्मक क्षमता
+
+          - slug: decision-making-problem-solving
+            name_en: Decision making and problem solving
+            name_hi: निर्णयन एवं समस्या समाधान
+
+          - slug: general-mental-ability
+            name_en: General mental ability
+            name_hi: सामान्य मानसिक योग्यता
+
+          - slug: basic-numeracy
+            name_en: Basic numeracy (Class X level)
+            name_hi: आधारभूत संख्यन (दसवीं कक्षा का स्तर)
+            children:
+              - {slug: numbers-and-relations, name_en: "Numbers and their relations", name_hi: "संख्याएँ एवं उनके संबंध"}
+              - {slug: orders-of-magnitude, name_en: "Orders of magnitude", name_hi: "विस्तार क्रम"}
+
+          - slug: data-interpretation
+            name_en: Data interpretation (Class X level)
+            name_hi: आँकड़ों का निर्वचन (दसवीं कक्षा का स्तर)
+            children:
+              - {slug: charts-graphs-tables, name_en: "Charts, graphs and tables", name_hi: "आलेख, चार्ट एवं तालिकाएँ"}
+              - {slug: data-sufficiency, name_en: "Data sufficiency", name_hi: "आँकड़ों की पर्याप्तता"}

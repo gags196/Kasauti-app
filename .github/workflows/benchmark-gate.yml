@@ -1,0 +1,26 @@
+# Benchmark gate (plan §5): any change to rubrics or the LLM layer must re-run the
+# accuracy benchmark against the labeled set and fail if agreement metrics regress.
+# Activated in Phase 2 once the benchmark runner and labeled corpus exist —
+# until then this workflow only validates rubric syntax so the trigger paths are exercised.
+name: Benchmark gate
+
+on:
+  pull_request:
+    paths:
+      - "content/rubrics/**"
+      - "content/prompts/**"
+      - "apps/api/src/kasauti_api/domain/llm/**"
+      - "apps/api/src/kasauti_api/domain/rubric/**"
+
+jobs:
+  benchmark:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync --all-extras
+      - run: uv run python scripts/validate_rubrics.py
+      # Phase 2 (uncomment when runner + labeled set land):
+      # - run: uv run python scripts/run_benchmark.py --compare-to-last-report --fail-on-regression
+      #   env:
+      #     KASAUTI_ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}

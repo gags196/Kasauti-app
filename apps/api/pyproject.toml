@@ -1,0 +1,48 @@
+[project]
+name = "kasauti-api"
+version = "0.1.0"
+description = "Kasauti FastAPI backend, admin, and workers"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.30",
+    "sqlalchemy[asyncio]>=2.0",
+    "alembic>=1.13",
+    "asyncpg>=0.29",
+    "pgvector>=0.3",
+    "sqlalchemy-utils>=0.41",
+    "pydantic>=2.8",
+    "pydantic-settings>=2.4",
+    "arq>=0.26",
+    "redis>=5.0",
+    "sqladmin[full]>=0.19",
+    "fastapi-users[sqlalchemy]>=13.0",
+    "anthropic>=0.40",
+    "voyageai>=0.3",
+    "boto3>=1.34",
+    "httpx>=0.27",
+    "pyyaml>=6.0",
+    "jsonschema>=4.23",
+    "sympy>=1.13",
+    "python-multipart>=0.0.9",
+    "itsdangerous>=2.2",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.24",
+    "ruff>=0.6",
+    "aiosqlite>=0.20",
+    # PDF page rendering + exact page geometry. Needed to read scans without a
+    # system poppler install, and to size image tokens for the cost model.
+    # PDFium is BSD-licensed — unlike PyMuPDF, which is AGPL and unusable here.
+    "pypdfium2>=4.30",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/kasauti_api"]

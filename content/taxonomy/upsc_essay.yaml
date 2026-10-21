@@ -1,0 +1,134 @@
+# UPSC CSE Mains — Paper-I, Essay.
+#
+# UPSC prescribes NO content syllabus for the Essay paper. The notification's entire
+# statement is: "Candidates may be required to write essays on multiple topics. They
+# will be expected to keep closely to the subject of the essay, to arrange their ideas
+# in orderly fashion, and to write concisely. Credit will be given for effective and
+# exact expression."
+#
+# So — unlike prelims-gs2 (CSAT), whose six bullets are transcribed verbatim from the
+# notification — this tree is a purpose-built thematic scheme, derived by reading all
+# essay topics 2013-2025. It exists only so the intelligence layer has something to
+# rank/trend/recur against; it is founder-editable YAML and meant to be reshaped as the
+# corpus grows. Two levels deep, matching the GS trees (branch = depth 1, leaf = depth 2).
+exam:
+  code: upsc-cse
+  name_en: UPSC Civil Services Examination
+  name_hi: संघ लोक सेवा आयोग सिविल सेवा परीक्षा
+
+papers:
+  - code: mains-essay
+    stage: mains
+    name_en: "Paper-I — Essay"
+    name_hi: "प्रश्नपत्र-I — निबन्ध"
+    subjects:
+      - code: essay
+        name_en: Essay
+        name_hi: निबन्ध
+        topics:
+          - slug: philosophy-and-human-condition
+            name_en: Philosophy, wisdom and the human condition
+            name_hi: दर्शन, विवेक एवं मानवीय स्थिति
+            children:
+              - {slug: meaning-purpose-and-happiness, name_en: "Meaning, purpose and the pursuit of happiness", name_hi: "अर्थ, प्रयोजन एवं प्रसन्नता की खोज"}
+              - {slug: truth-knowledge-and-perception, name_en: "Truth, perception and ways of knowing", name_hi: "सत्य, अवबोध एवं ज्ञान के मार्ग"}
+              - {slug: simplicity-desire-and-materialism, name_en: "Simplicity, desire, contentment and materialism", name_hi: "सरलता, इच्छा, संतोष एवं भौतिकतावाद"}
+              - {slug: change-impermanence-and-resilience, name_en: "Change, impermanence and resilience", name_hi: "परिवर्तन, अनित्यता एवं लचीलापन"}
+
+          - slug: ethics-values-and-integrity
+            name_en: Ethics, values and integrity
+            name_hi: नीतिशास्त्र, मूल्य एवं सत्यनिष्ठा
+            children:
+              - {slug: personal-and-public-morality, name_en: "Personal and public morality", name_hi: "निजी एवं सार्वजनिक नैतिकता"}
+              - {slug: values-in-education-and-society, name_en: "Values in education and society", name_hi: "शिक्षा एवं समाज में मूल्य"}
+              - {slug: power-responsibility-and-accountability, name_en: "Power, responsibility and accountability", name_hi: "शक्ति, उत्तरदायित्व एवं जवाबदेही"}
+              - {slug: conscience-and-moral-courage, name_en: "Conscience, gratitude and moral courage", name_hi: "अंतरात्मा, कृतज्ञता एवं नैतिक साहस"}
+
+          - slug: society-and-social-justice
+            name_en: Society, social justice and inequality
+            name_hi: समाज, सामाजिक न्याय एवं असमानता
+            children:
+              - {slug: inequality-and-social-hierarchy, name_en: "Inequality and social hierarchy", name_hi: "असमानता एवं सामाजिक पदानुक्रम"}
+              - {slug: poverty-and-development, name_en: "Poverty and human development", name_hi: "निर्धनता एवं मानव विकास"}
+              - {slug: justice-charity-and-welfare, name_en: "Justice, charity and welfare", name_hi: "न्याय, दान एवं कल्याण"}
+              - {slug: culture-community-and-plural-identity, name_en: "Culture, community and plural identity", name_hi: "संस्कृति, समुदाय एवं बहुल पहचान"}
+
+          - slug: women-and-gender
+            name_en: Women and gender
+            name_hi: महिलाएँ एवं लैंगिकता
+            children:
+              - {slug: patriarchy-and-gendered-expectations, name_en: "Patriarchy and gendered expectations", name_hi: "पितृसत्ता एवं लैंगिक अपेक्षाएँ"}
+              - {slug: women-empowerment-and-agency, name_en: "Women's empowerment and agency", name_hi: "महिला सशक्तीकरण एवं कर्तृत्व"}
+
+          - slug: polity-governance-and-democracy
+            name_en: Polity, governance and democracy
+            name_hi: राजव्यवस्था, शासन एवं लोकतंत्र
+            children:
+              - {slug: democracy-and-institutions, name_en: "Democracy and its institutions", name_hi: "लोकतंत्र एवं उसकी संस्थाएँ"}
+              - {slug: federalism-and-centre-state-relations, name_en: "Federalism and Centre-State relations", name_hi: "संघवाद एवं केंद्र-राज्य संबंध"}
+              - {slug: governance-policy-and-implementation, name_en: "Governance, policy design and implementation", name_hi: "शासन, नीति-निर्माण एवं क्रियान्वयन"}
+              - {slug: privacy-rights-and-the-state, name_en: "Privacy, rights and the state", name_hi: "निजता, अधिकार एवं राज्य"}
+
+          - slug: economy-and-development
+            name_en: Economy and development
+            name_hi: अर्थव्यवस्था एवं विकास
+            children:
+              - {slug: growth-models-and-inclusive-development, name_en: "Growth models and inclusive development", name_hi: "विकास के प्रतिमान एवं समावेशी विकास"}
+              - {slug: well-being-beyond-gdp, name_en: "Well-being beyond GDP", name_hi: "जीडीपी से परे कल्याण"}
+              - {slug: capitalism-markets-and-inequality, name_en: "Capitalism, markets and inequality", name_hi: "पूँजीवाद, बाज़ार एवं असमानता"}
+              - {slug: innovation-and-economic-transformation, name_en: "Innovation and economic transformation", name_hi: "नवाचार एवं आर्थिक रूपांतरण"}
+
+          - slug: science-technology-and-innovation
+            name_en: Science, technology and innovation
+            name_hi: विज्ञान, प्रौद्योगिकी एवं नवाचार
+            children:
+              - {slug: technology-and-human-labour, name_en: "Technology and human labour", name_hi: "प्रौद्योगिकी एवं मानव श्रम"}
+              - {slug: artificial-intelligence-and-automation, name_en: "Artificial intelligence and automation", name_hi: "कृत्रिम बुद्धिमत्ता एवं स्वचालन"}
+              - {slug: scientific-temper-and-inquiry, name_en: "Scientific temper and the spirit of inquiry", name_hi: "वैज्ञानिक दृष्टिकोण एवं जिज्ञासा की भावना"}
+              - {slug: internet-and-cyberspace, name_en: "The internet and cyberspace", name_hi: "इंटरनेट एवं साइबरस्पेस"}
+
+          - slug: environment-and-sustainability
+            name_en: Environment, ecology and sustainability
+            name_hi: पर्यावरण, पारिस्थितिकी एवं संधारणीयता
+            children:
+              - {slug: nature-civilisation-and-ecological-limits, name_en: "Nature, civilisation and ecological limits", name_hi: "प्रकृति, सभ्यता एवं पारिस्थितिक सीमाएँ"}
+              - {slug: climate-change-and-resilience, name_en: "Climate change and resilience", name_hi: "जलवायु परिवर्तन एवं अनुकूलन"}
+
+          - slug: education-and-knowledge
+            name_en: Education and knowledge
+            name_hi: शिक्षा एवं ज्ञान
+            children:
+              - {slug: purpose-and-philosophy-of-education, name_en: "Purpose and philosophy of education", name_hi: "शिक्षा का प्रयोजन एवं दर्शन"}
+              - {slug: assessment-competition-and-youth, name_en: "Assessment, competition and the youth", name_hi: "मूल्यांकन, प्रतिस्पर्धा एवं युवा"}
+              - {slug: knowledge-research-and-the-mind, name_en: "Knowledge, research and the life of the mind", name_hi: "ज्ञान, शोध एवं बौद्धिक जीवन"}
+
+          - slug: india-and-the-world
+            name_en: India and the world
+            name_hi: भारत एवं विश्व
+            children:
+              - {slug: india-in-a-multipolar-world, name_en: "India in a multipolar world", name_hi: "बहुध्रुवीय विश्व में भारत"}
+              - {slug: borders-security-and-strategy, name_en: "Borders, security and strategy", name_hi: "सीमाएँ, सुरक्षा एवं रणनीति"}
+              - {slug: ethics-and-technology-in-international-relations, name_en: "Ethics and technology in international relations", name_hi: "अंतर्राष्ट्रीय संबंधों में नीतिशास्त्र एवं प्रौद्योगिकी"}
+
+          - slug: nationalism-history-and-culture
+            name_en: Nationalism, history and civilisation
+            name_hi: राष्ट्रवाद, इतिहास एवं सभ्यता
+            children:
+              - {slug: colonial-legacy-and-national-aspiration, name_en: "Colonial legacy and national aspiration", name_hi: "औपनिवेशिक विरासत एवं राष्ट्रीय आकांक्षा"}
+              - {slug: lessons-and-cycles-of-history, name_en: "Lessons and cycles of history", name_hi: "इतिहास की शिक्षाएँ एवं चक्र"}
+              - {slug: art-literature-and-the-past, name_en: "Art, literature and the past", name_hi: "कला, साहित्य एवं अतीत"}
+
+          - slug: individual-growth-and-decision-making
+            name_en: "The individual — character, growth and decision-making"
+            name_hi: व्यक्ति — चरित्र, विकास एवं निर्णयन
+            children:
+              - {slug: character-leadership-and-institutions, name_en: "Character, leadership and institutions", name_hi: "चरित्र, नेतृत्व एवं संस्थाएँ"}
+              - {slug: risk-choice-and-judgement, name_en: "Risk, choice and judgement", name_hi: "जोखिम, विकल्प एवं विवेक-निर्णय"}
+              - {slug: wisdom-in-everyday-action, name_en: "Wisdom in everyday action", name_hi: "दैनिक आचरण में विवेक"}
+
+          - slug: media-communication-and-digital-life
+            name_en: Media, communication and digital life
+            name_hi: मीडिया, संचार एवं डिजिटल जीवन
+            children:
+              - {slug: social-media-and-the-self, name_en: "Social media and the self", name_hi: "सोशल मीडिया एवं आत्म"}
+              - {slug: media-democracy-and-public-discourse, name_en: "Media, democracy and public discourse", name_hi: "मीडिया, लोकतंत्र एवं सार्वजनिक विमर्श"}

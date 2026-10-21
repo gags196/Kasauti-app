@@ -1,0 +1,87 @@
+# UPSC CSE Mains — GS Paper IV. Headings follow the official syllabus in the UPSC
+# notification (Section III, Part B, Paper-V).
+#
+# Mains-only by design: Prelims never tests ethics, so `prelims-gs1` deliberately does
+# NOT list gs4 in tag_subjects. Keeping it out of the Prelims candidate list also keeps
+# the tagging prompt smaller, since the whole candidate list is resent per question.
+exam:
+  code: upsc-cse
+  name_en: UPSC Civil Services Examination
+  name_hi: संघ लोक सेवा आयोग सिविल सेवा परीक्षा
+
+papers:
+  - code: mains-gs4
+    stage: mains
+    name_en: "General Studies Paper IV — Ethics, Integrity and Aptitude"
+    name_hi: "सामान्य अध्ययन प्रश्नपत्र IV — नीतिशास्त्र, सत्यनिष्ठा एवं अभिरुचि"
+    subjects:
+      - code: gs4
+        name_en: General Studies IV
+        name_hi: सामान्य अध्ययन IV
+        topics:
+          - slug: ethics-human-interface
+            name_en: Ethics and Human Interface
+            name_hi: नीतिशास्त्र एवं मानवीय अंतरापृष्ठ
+            children:
+              - {slug: essence-and-consequences, name_en: "Essence, determinants and consequences of ethics in human actions", name_hi: "मानवीय कार्यों में नीतिशास्त्र का सार, निर्धारक तत्व एवं परिणाम"}
+              - {slug: dimensions-of-ethics, name_en: "Dimensions of ethics; ethics in private and public relationships", name_hi: "नीतिशास्त्र के आयाम; निजी एवं सार्वजनिक संबंधों में नीतिशास्त्र"}
+              - {slug: human-values, name_en: "Human values — lessons from the lives of great leaders, reformers and administrators", name_hi: "मानवीय मूल्य — महान नेताओं, सुधारकों एवं प्रशासकों के जीवन से शिक्षाएँ"}
+              - {slug: role-of-family-society-education, name_en: "Role of family, society and educational institutions in inculcating values", name_hi: "मूल्यों के अनुशीलन में परिवार, समाज एवं शैक्षणिक संस्थाओं की भूमिका"}
+
+          - slug: attitude
+            name_en: Attitude
+            name_hi: अभिवृत्ति
+            children:
+              - {slug: content-structure-function, name_en: "Content, structure and function of attitude", name_hi: "अभिवृत्ति की अंतर्वस्तु, संरचना एवं कार्य"}
+              - {slug: moral-political-attitudes, name_en: "Moral and political attitudes; influence on thought and behaviour", name_hi: "नैतिक एवं राजनीतिक अभिवृत्तियाँ; विचार एवं व्यवहार पर प्रभाव"}
+              - {slug: social-influence-persuasion, name_en: "Social influence and persuasion", name_hi: "सामाजिक प्रभाव एवं धारणा-परिवर्तन"}
+
+          - slug: aptitude-foundational-values
+            name_en: Aptitude and Foundational Values for Civil Service
+            name_hi: सिविल सेवा हेतु अभिरुचि एवं आधारभूत मूल्य
+            children:
+              - {slug: integrity-impartiality, name_en: "Integrity, impartiality and non-partisanship, objectivity", name_hi: "सत्यनिष्ठा, निष्पक्षता एवं गैर-तरफदारी, वस्तुनिष्ठता"}
+              - {slug: dedication-to-public-service, name_en: "Dedication to public service", name_hi: "लोक सेवा के प्रति समर्पण"}
+              - {slug: empathy-tolerance-compassion, name_en: "Empathy, tolerance and compassion towards the weaker sections", name_hi: "कमज़ोर वर्गों के प्रति सहानुभूति, सहिष्णुता एवं करुणा"}
+
+          - slug: emotional-intelligence
+            name_en: Emotional Intelligence
+            name_hi: भावनात्मक बुद्धिमत्ता
+            children:
+              - {slug: concepts-and-utility, name_en: "Concepts of emotional intelligence and their utility", name_hi: "भावनात्मक बुद्धिमत्ता की अवधारणाएँ एवं उनकी उपयोगिता"}
+              - {slug: application-in-governance, name_en: "Application of emotional intelligence in administration and governance", name_hi: "प्रशासन एवं शासन में भावनात्मक बुद्धिमत्ता का अनुप्रयोग"}
+
+          - slug: moral-thinkers
+            name_en: Contributions of Moral Thinkers and Philosophers
+            name_hi: नैतिक चिंतकों एवं दार्शनिकों का योगदान
+            children:
+              - {slug: indian-thinkers, name_en: "Moral thinkers and philosophers from India", name_hi: "भारत के नैतिक चिंतक एवं दार्शनिक"}
+              - {slug: world-thinkers, name_en: "Moral thinkers and philosophers from the world", name_hi: "विश्व के नैतिक चिंतक एवं दार्शनिक"}
+
+          - slug: public-service-ethics
+            name_en: Public/Civil Service Values and Ethics in Public Administration
+            name_hi: लोक सेवा मूल्य एवं लोक प्रशासन में नीतिशास्त्र
+            children:
+              - {slug: status-and-problems, name_en: "Status and problems of public service values", name_hi: "लोक सेवा मूल्यों की स्थिति एवं समस्याएँ"}
+              - {slug: ethical-dilemmas, name_en: "Ethical concerns and dilemmas in government and private institutions", name_hi: "सरकारी एवं निजी संस्थाओं में नैतिक सरोकार एवं दुविधाएँ"}
+              - {slug: sources-of-ethical-guidance, name_en: "Laws, rules, regulations and conscience as sources of ethical guidance", name_hi: "नैतिक मार्गदर्शन के स्रोत के रूप में विधि, नियम, विनियम एवं अंतरात्मा"}
+              - {slug: accountability-ethical-governance, name_en: "Accountability and ethical governance; strengthening of ethical and moral values in governance", name_hi: "जवाबदेही एवं नैतिक शासन; शासन में नैतिक मूल्यों का सुदृढ़ीकरण"}
+              - {slug: ethics-in-international-relations, name_en: "Ethical issues in international relations and funding", name_hi: "अंतर्राष्ट्रीय संबंधों एवं वित्तपोषण में नैतिक मुद्दे"}
+              - {slug: corporate-governance, name_en: "Corporate governance", name_hi: "निगमित अभिशासन"}
+
+          - slug: probity-in-governance
+            name_en: Probity in Governance
+            name_hi: शासन में सत्यनिष्ठा
+            children:
+              - {slug: concept-of-public-service, name_en: "Concept of public service; philosophical basis of governance and probity", name_hi: "लोक सेवा की अवधारणा; शासन एवं सत्यनिष्ठा का दार्शनिक आधार"}
+              - {slug: rti-transparency, name_en: "Information sharing and transparency in government; Right to Information", name_hi: "सरकार में सूचना साझाकरण एवं पारदर्शिता; सूचना का अधिकार"}
+              - {slug: codes-of-ethics-and-conduct, name_en: "Codes of Ethics and Codes of Conduct", name_hi: "नीति संहिता एवं आचार संहिता"}
+              - {slug: citizens-charters, name_en: "Citizen's Charters, work culture and quality of service delivery", name_hi: "नागरिक घोषणापत्र, कार्य संस्कृति एवं सेवा प्रदायगी की गुणवत्ता"}
+              - {slug: utilization-of-public-funds, name_en: "Utilization of public funds", name_hi: "सार्वजनिक निधियों का उपयोग"}
+              - {slug: challenges-of-corruption, name_en: "Challenges of corruption", name_hi: "भ्रष्टाचार की चुनौतियाँ"}
+
+          - slug: case-studies
+            name_en: Case Studies on Ethics and Governance
+            name_hi: नीतिशास्त्र एवं शासन पर केस अध्ययन
+            children:
+              - {slug: administrative-case-studies, name_en: "Case studies on ethical dilemmas in administration", name_hi: "प्रशासन में नैतिक दुविधाओं पर केस अध्ययन"}
