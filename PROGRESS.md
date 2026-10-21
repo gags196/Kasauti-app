@@ -5,8 +5,8 @@ Low-level tracker. Update on every work session. Status: `todo` | `doing` | `don
 ## Current state
 - Date of last update: 2026-10-21
 - Branch: `main`
-- HEAD: `cb2c218` Portfolio edition of Kasauti (pushed)
-- CI: green on GitHub (run 39657193689)
+- HEAD: run `git log -1` (do not hardcode here)
+- CI: green on GitHub at 9cdc8f0 (run 39658373521); check `gh run list` each session
 - Local empty-DB tests: 154 pass, 12 skip, 0 fail
 - Next session starts at: **T-01**
 
@@ -18,7 +18,8 @@ Low-level tracker. Update on every work session. Status: `todo` | `doing` | `don
 | 2026-10-21 | Added ARCHITECTURE.md, README (known limits), LICENSE (MIT, holder `gags196`) | cb2c218 |
 | 2026-10-21 | CI: pgvector service container, alembic + seed before pytest | cb2c218 |
 | 2026-10-21 | `test_topic_profile`: skip when no peers (was fail on empty DB) | cb2c218 |
-| 2026-10-21 | Added CLAUDE.md, PROGRESS.md | pending |
+| 2026-10-21 | Added CLAUDE.md, PROGRESS.md | 3bdf1e6 |
+| 2026-10-21 | Dropped placeholder Q-05 | 9cdc8f0 |
 
 ## Code-review findings
 | ID | Finding | File | Severity | Status | Task |
